@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layouts from "./layouts";
-
+import PageError500 from "./page/PageError500";
 const Home = React.lazy(() => import("./page/Home"));
 const Article = React.lazy(() => import("./page/Article"));
 const CreateArticle = React.lazy(() => import("./page/CreateArticle"));
@@ -74,6 +74,7 @@ function App() {
             }
           />
         </Route>
+        <Route path="/500" element={<PageError500 />}></Route>
       </Routes>
     </BrowserRouter>
   );
