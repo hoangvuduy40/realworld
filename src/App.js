@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layouts from "./layouts";
-import PageError500 from "./page/PageError500";
+import PageError500 from "./page/PageError";
+import NotFound from "./page/PageError/NotFound";
 const Home = React.lazy(() => import("./page/Home"));
 const Article = React.lazy(() => import("./page/Article"));
 const CreateArticle = React.lazy(() => import("./page/CreateArticle"));
@@ -75,6 +76,7 @@ function App() {
           />
         </Route>
         <Route path="/500" element={<PageError500 />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
